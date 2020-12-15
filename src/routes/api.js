@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
 router.get('/api/:city', async (req, res) => {
   var d = new Date().getDate();
   if (!isPrime(d)) {
-    res.json({ "message": "Date is not prime so no date" });
+    res.json({ "message": "Date is not prime so no data" });
   }
   else {
     const city = req.params.city;
