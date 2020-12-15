@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 // Middleware
@@ -6,9 +7,10 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }))
 
 // Import Route
-const apiRoute = require('./routes/api');
+const apiRoute = require('./src/routes/api');
 
 // Use View Engine
+app.set('views', path.join(__dirname, './src/views'))
 app.set('view engine', 'ejs');
 
 // Middleware route
