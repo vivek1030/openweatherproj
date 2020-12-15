@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
           .then(data => {
             res.render('index', {
               weatherdata: data,
-              ndate: nDate,
+              ndate: nDate
             });
           });
 
@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
 
 router.get('/api/:city', async (req, res) => {
   var d = new Date().getDate();
-  if (isPrime(d)) {
+  if (!isPrime(d)) {
     res.json({ "message": "Date is not prime so no date" });
   }
   else {
