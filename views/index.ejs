@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Openweather || Api test</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main-wrap">
+        <div class="row sectioninfo">
+          <div class="column2">
+            <div class="formcityselect">
+              <form action="/" method="POST">
+                <input type="text" name="city" class="inp-city" placeholder="Enter a city" autocomplete="off">
+                <button type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+          <div class="column1">
+              <h2 class="city-name"><%= weatherdata.name %></h2>
+              <p class="date-time"><%= ndate %></p>
+          </div>   
+          <div class="column1" style="text-align: center;">
+            <h2 class="weather"><%= weatherdata.weather[0].main %></h2>
+            <p class="weather-desc"><%= weatherdata.weather[0].description %></p>
+            <img class="weathericon" src="http://openweathermap.org/img/w/<%= weatherdata.weather[0].icon %>.png">
+              <h3 class="weather-temp"><%= (weatherdata.main.temp - 273.15).toPrecision(2) %> c</h3>
+          </div>   
+          <div class="column1 info-api">
+            <h2>humidity</h2>
+            <p><%= weatherdata.main.humidity %> %</p>
+            <h2>pressure</h2>
+            <p><%= weatherdata.main.pressure %> PS</p>
+            <h2>wind speed</h2>
+            <p><%= weatherdata.wind.speed %> km/h</p>
+          </div>   
+        </div>
+    </div>
+  </div>
+</body>
+</html>

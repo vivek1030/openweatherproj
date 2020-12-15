@@ -1,0 +1,20 @@
+{
+  "name": "nodestarkdigital",
+  "version": "1.0.0",
+  "description": "this is api testing assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vivek nishant",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.6"
+  }
+}
